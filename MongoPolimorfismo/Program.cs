@@ -1,7 +1,6 @@
 using JsonSubTypes;
 using Microsoft.OpenApi.Models;
 using MongoPolimorfismo.Domain.Models;
-using MongoPolimorfismo.Providers;
 using MongoPolimorfismo.Repository.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,11 +16,6 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     );
 
 });
-
-//builder.Services.AddControllers(options =>
-//{
-//    options.ModelBinderProviders.Insert(0, new CampoModelBinderProvider());
-//});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
